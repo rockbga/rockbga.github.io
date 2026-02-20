@@ -43,6 +43,14 @@
     backdrop-filter: blur(8px);
   }
 
+  section, .section-anchor {
+    scroll-margin-top: 90px;
+  }
+
+  #about, #work, #contact {
+    scroll-margin-top: 90px;
+  }
+
   .nav-logo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 22px;
@@ -123,15 +131,9 @@
     pointer-events: none;
   }
 
-  /* Accent line on left */
+  /* Accent line on left - removed */
   .hero-content::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 56px;
-    width: 2px;
-    height: 100%;
-    background: var(--accent);
-    opacity: 0.5;
+    display: none;
   }
 
   .hero-eyebrow {
@@ -579,8 +581,8 @@
     nav { padding: 18px 24px; }
     .nav-links { gap: 20px; }
     .hero { min-height: 100vh; }
-    .hero-content { width: 100%; padding: 0 24px 64px; }
-    .hero-photo-col { width: 100%; height: 50vw; position: relative; }
+    .hero-content { width: 100%; padding: 80px 24px 64px; }
+    .hero-photo-col { width: 100%; height: 60vw; position: relative; }
     .hero { flex-direction: column-reverse; }
     .hero-bottom { flex-direction: column; align-items: flex-start; gap: 40px; }
     .hero-stats { flex-direction: row; gap: 32px; }
@@ -592,6 +594,15 @@
     .shows-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+    /* Kill the green grid line on mobile */
+    .hero-content::after { display: none !important; content: none !important; }
+    .hero-content::before { display: none !important; }
+  }
+
+  /* ── LANDSCAPE MOBILE ── */
+  @media (max-width: 900px) and (orientation: landscape) {
+    .hero { padding-top: 80px; }
+    .hero-content { padding-top: 100px; }
   }
 </style>
 </head>
